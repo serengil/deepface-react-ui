@@ -74,7 +74,8 @@ Instead of running deepface and deepface react ui seperately in different termin
 
 ```shell
 # clone source code
-git clone https://github.com/serengil/deepface-react-ui.git && git clone https://github.com/serengil/deepface.git
+git clone https://github.com/serengil/deepface-react-ui.git \
+    && git clone https://github.com/serengil/deepface.git
 
 # go to project's directory
 cd deepface-react-ui/scripts

@@ -1,6 +1,7 @@
 # DeepFace React UI
 
 <div align="center">
+
 [![Stars](https://img.shields.io/github/stars/serengil/deepface-react-ui?color=yellow&style=flat&label=%E2%AD%90%20stars)](https://github.com/serengil/deepface-react-ui/stargazers)
 [![License](http://img.shields.io/:license-MIT-green.svg?style=flat)](https://github.com/serengil/deepface-react-ui/blob/master/LICENSE)
 
@@ -13,6 +14,7 @@
 [![Buy Me a Coffee](https://img.shields.io/badge/-buy_me_a%C2%A0coffee-gray?logo=buy-me-a-coffee)](https://buymeacoffee.com/serengil)
 
 [![DOI](http://img.shields.io/:DOI-10.17671/gazibtd.1399077-blue.svg?style=flat)](https://doi.org/10.17671/gazibtd.1399077)
+
 </div>
 
 deepface-react-ui is a comprehensive user interface built with React.js, designed specifically for streamlined face verification tasks using the [DeepFace](https://github.com/serengil/deepface) library. This UI not only simplifies the implementation of facial recognition features but also enhances security with built-in [anti-spoofing](https://youtu.be/UiK1aIjOBlQ) capabilities. Whether you're working on identity verification systems, security applications, or simply exploring facial recognition technology, this UI provides an intuitive platform to harness the power of DeepFace within your web applications.

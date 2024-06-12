@@ -1,0 +1,16 @@
+services:
+  deepface:
+    build: ../deepface
+    container_name: deepface
+    ports:
+      - "5005:5000"  # Assuming deepface runs on port 5000
+    environment:
+      - CUDA_VISIBLE_DEVICES=-1 # disable gpu
+
+  deepface-react-ui:
+    build: .
+    container_name: deepface_react_ui_container
+    ports:
+      - "3000:3000"  # Assuming deepface-react-ui runs on port 3000
+    depends_on:
+      - deepface

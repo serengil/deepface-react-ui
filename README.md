@@ -28,21 +28,6 @@ Facial recognition technology plays a pivotal role in modern applications, from 
 There is `.env.example` file in the root of the project. You should copy this as `.env`. Required modifications are mentioned as comments. You need to add your facial database items into this file, prefixing each with `REACT_APP_USER_`, where the identity name with that prefix serves as the key and the base64-encoded string of their images serves as the value.
 
 ```yaml
-# backend deepface service's endpoint, do not change if not necessary
-REACT_APP_SERVICE_ENDPOINT=http://localhost:5005
-
-# Set FR model: VGG-Face, Facenet, Facenet512, OpenFace, DeepFace, DeepId, ArcFace, Dlib, SFace, GhostFaceNet
-REACT_APP_FACE_RECOGNITION_MODEL=Facenet
-
-# Set face detector: opencv, ssd, mtcnn, dlib, mediapipe, retinaface, yolov8, yunet, centerface
-REACT_APP_DETECTOR_BACKEND=opencv
-
-# Set distance metric: cosine, euclidean, euclidean_l2
-REACT_APP_DISTANCE_METRIC=cosine
-
-# Set REACT_APP_ANTI_SPOOFING to 1 if you want to enable anti-spoofing
-REACT_APP_ANTI_SPOOFING=0
-
 # define your facial database. keys are names with REACT_APP_USER_ prefix and values are base64 encoded strings
 REACT_APP_USER_ALICE=data:image/png;base64,...
 REACT_APP_USER_BOB=data:image/png;base64,...

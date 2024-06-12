@@ -3,7 +3,7 @@
 <div align="center">
 
 [![Stars](https://img.shields.io/github/stars/serengil/deepface-react-ui?color=yellow&style=flat&label=%E2%AD%90%20stars)](https://github.com/serengil/deepface-react-ui/stargazers)
-[![License](http://img.shields.io/:license-MIT-green.svg?style=flat)](https://github.com/serengil/deepface-react-ui/blob/master/LICENSE)
+[![License](http://img.shields.io/:license-MIT-green.svg?style=flat)](https://github.com/serengil/deepface-react-ui/blob/main/LICENSE)
 
 [![Blog](https://img.shields.io/:blog-sefiks.com-blue.svg?style=flat&logo=wordpress)](https://sefiks.com)
 [![YouTube](https://img.shields.io/:youtube-@sefiks-red.svg?style=flat&logo=youtube)](https://www.youtube.com/@sefiks?sub_confirmation=1)
@@ -91,9 +91,9 @@ cd deepface-react-ui/scripts
 
 # Using The App
 
-Once you start the service, the DeepFace service will be accessible at http://localhost:5005/, and the DeepFace React UI will be available at http://localhost:3000/.
+Once you start the service, the DeepFace service will be accessible at `http://localhost:5005/`, and the DeepFace React UI will be available at `http://localhost:3000/`.
 
-To use the DeepFace React UI, open http://localhost:3000/ in your browser. The UI will prompt access to your webcam and search for identities within the current frame using the facial database specified in the `.env` file when you click on the "Verify" button.
+To use the DeepFace React UI, open `http://localhost:3000/` in your browser. The UI will prompt access to your webcam and search for identities within the current frame using the facial database specified in the `.env` file when you click on the "Verify" button.
 
 ## Support
 
@@ -130,4 +130,4 @@ Please cite deepface-react-ui in your publications if it helps your research. He
 
 ## Licence
 
-DeepFace React UI is licensed under the MIT License - see [`LICENSE`](https://github.com/serengil/deepface-react-ui/blob/master/LICENSE) for more details.
+DeepFace React UI is licensed under the MIT License - see [`LICENSE`](https://github.com/serengil/deepface-react-ui/blob/main/LICENSE) for more details.

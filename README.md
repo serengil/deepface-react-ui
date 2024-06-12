@@ -25,7 +25,7 @@ Facial recognition technology plays a pivotal role in modern applications, from 
 
 ## Configuration
 
-There is `.env.example` file in the root of the project. You should copy this as `.env`. Required modifications are mentioned as comments.
+There is `.env.example` file in the root of the project. You should copy this as `.env`. Required modifications are mentioned as comments. You need to add your facial database items into this file, prefixing each with `REACT_APP_USER_`, where the identity name with that prefix serves as the key and the base64-encoded string of their images serves as the value.
 
 ```yaml
 # backend deepface service's endpoint, do not change if not necessary

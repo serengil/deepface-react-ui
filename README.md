@@ -21,7 +21,7 @@ deepface-react-ui is a comprehensive user interface built with React.js, designe
 
 Facial recognition technology plays a pivotal role in modern applications, from enhancing security measures to enabling personalized user experiences. The deepface-react-ui empowers developers and researchers to harness these capabilities effortlessly within their web applications.
 
-<p align="center"><img src="https://raw.githubusercontent.com/serengil/deepface/master/resources/tp.jpg" width="50%"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/serengil/deepface-react-ui/main/resources/tp.jpg" width="50%"></p>
 
 ## Configuration
 

@@ -17,7 +17,7 @@
 
 </div>
 
-deepface-react-ui is a comprehensive user interface built with React.js, designed specifically for streamlined face verification tasks using the [DeepFace](https://github.com/serengil/deepface) library. This UI not only simplifies the implementation of facial recognition features but also enhances security with built-in [anti-spoofing](https://youtu.be/UiK1aIjOBlQ) capabilities. Whether you're working on identity verification systems, security applications, or simply exploring facial recognition technology, this UI provides an intuitive platform to harness the power of DeepFace within your web applications.
+deepface-react-ui is a comprehensive user interface for facial recognition built with ReactJS, designed specifically for streamlined face verification tasks using the [DeepFace](https://github.com/serengil/deepface) library. This UI not only simplifies the implementation of facial recognition features but also enhances security with built-in [anti-spoofing](https://youtu.be/UiK1aIjOBlQ) capabilities. Whether you're working on identity verification systems, security applications, or simply exploring facial recognition technology, this UI provides an intuitive platform to harness the power of DeepFace within your web applications.
 
 Facial recognition technology plays a pivotal role in modern applications, from enhancing security measures to enabling personalized user experiences. The deepface-react-ui empowers developers and researchers to harness these capabilities effortlessly within their web applications.
 
@@ -30,6 +30,15 @@ There is `.env.example` file in the root of the project. You should copy this as
 ```yaml
 # backend deepface service's endpoint, do not change if not necessary
 REACT_APP_SERVICE_ENDPOINT=http://localhost:5005
+
+# Set FR model: VGG-Face, Facenet, Facenet512, OpenFace, DeepFace, DeepId, ArcFace, Dlib, SFace, GhostFaceNet
+REACT_APP_FACE_RECOGNITION_MODEL=Facenet
+
+# Set face detector: opencv, ssd, mtcnn, dlib, mediapipe, retinaface, yolov8, yunet, centerface
+REACT_APP_DETECTOR_BACKEND=opencv
+
+# Set distance metric: cosine, euclidean, euclidean_l2
+REACT_APP_DISTANCE_METRIC=cosine
 
 # Set REACT_APP_ANTI_SPOOFING to 1 if you want to enable anti-spoofing
 REACT_APP_ANTI_SPOOFING=0

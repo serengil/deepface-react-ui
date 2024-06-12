@@ -1,6 +1,10 @@
 import React, { useRef, useEffect, useState } from 'react';
 
 function App() {
+  const facialRecognitionModel = process.env.REACT_APP_FACE_RECOGNITION_MODEL || "Facenet";
+  const faceDetector = process.env.REACT_APP_DETECTOR_BACKEND || "opencv";
+  const distanceMetric = process.env.REACT_APP_DISTANCE_METRIC || "cosine";
+
   const serviceEndpoint = process.env.REACT_APP_SERVICE_ENDPOINT;
   const antiSpoofing = process.env.REACT_APP_ANTI_SPOOFING === "1"
 
@@ -81,7 +85,10 @@ function App() {
 
         const requestBody = JSON.stringify(
           {
-            model_name: "Facenet", // smaller and better model
+            model_name: facialRecognitionModel,
+            detector_backend: faceDetector,
+            distance_metric: distanceMetric,
+            align: true,
             img1_path: base64Image,
             img2_path: targetEmbedding,
             enforce_detection: false,

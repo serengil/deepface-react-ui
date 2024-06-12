@@ -25,10 +25,10 @@ Facial recognition technology plays a pivotal role in modern applications, from 
 
 ## Configuration
 
-There is `.env.example` file in the root of the project. You should copy this as `.env`. Required modifications are mentioned as comments. You need to add your facial database items into this file, prefixing each with `REACT_APP_USER_`, where the identity name with that prefix serves as the key and the base64-encoded string of their images serves as the value.
+There is `.env.example` file in the root of the project. You should copy this as `.env`. Required modifications are mentioned as comments. You basically need to add your facial database items into this file, prefixing each with `REACT_APP_USER_`, where the identity name with that prefix serves as the key and the base64-encoded string of their images serves as the value.
 
 ```yaml
-# define your facial database. keys are names with REACT_APP_USER_ prefix and values are base64 encoded strings
+# define your facial database
 REACT_APP_USER_ALICE=data:image/png;base64,...
 REACT_APP_USER_BOB=data:image/png;base64,...
 REACT_APP_USER_CAROL=data:image/png;base64,...

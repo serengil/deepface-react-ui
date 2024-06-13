@@ -23,7 +23,7 @@ Facial recognition technology plays a pivotal role in modern applications, from 
 
 <p align="center"><img src="https://raw.githubusercontent.com/serengil/deepface-react-ui/main/resources/tp.jpg" width="50%"></p>
 
-## Configuration
+## Facial Database Configuration
 
 There is `.env.example` file in the root of the project. You should copy this as `.env`. Required modifications are mentioned as comments. You basically need to add your facial database items into this file, prefixing each with `REACT_APP_USER_`, where the identity name with that prefix serves as the key and the base64-encoded string of their images serves as the value.
 
@@ -34,11 +34,24 @@ REACT_APP_USER_BOB=data:image/png;base64,...
 REACT_APP_USER_CAROL=data:image/png;base64,...
 ```
 
+## Model Configuration
+
 DeepFace wraps many state-of-the-art facial recognition models: [`VGG-Face`](https://sefiks.com/2018/08/06/deep-face-recognition-with-keras/), [`FaceNet`](https://sefiks.com/2018/09/03/face-recognition-with-facenet-in-keras/), [`OpenFace`](https://sefiks.com/2019/07/21/face-recognition-with-openface-in-keras/), [`DeepFace`](https://sefiks.com/2020/02/17/face-recognition-with-facebook-deepface-in-keras/), [`DeepID`](https://sefiks.com/2020/06/16/face-recognition-with-deepid-in-keras/), [`ArcFace`](https://sefiks.com/2020/12/14/deep-face-recognition-with-arcface-in-keras-and-python/), [`Dlib`](https://sefiks.com/2020/07/11/face-recognition-with-dlib-in-python/), `SFace` and `GhostFaceNet`. According to [`experiments`](https://github.com/serengil/deepface/tree/master/benchmarks), those models reached or passed human-level accuracy.
 
 Similarly, it wraps many cutting-edge face detectors:  [`OpenCV`](https://sefiks.com/2020/02/23/face-alignment-for-face-recognition-in-python-within-opencv/), [`Ssd`](https://sefiks.com/2020/08/25/deep-face-detection-with-opencv-in-python/), [`Dlib`](https://sefiks.com/2020/07/11/face-recognition-with-dlib-in-python/),  [`MtCnn`](https://sefiks.com/2020/09/09/deep-face-detection-with-mtcnn-in-python/), `Faster MtCnn`, [`RetinaFace`](https://sefiks.com/2021/04/27/deep-face-detection-with-retinaface-in-python/), [`MediaPipe`](https://sefiks.com/2022/01/14/deep-face-detection-with-mediapipe/), `Yolo`, `YuNet` and `CenterFace`.
 
 Both facial recognition models and face detectors can be set in the `.env` file.
+
+```yaml
+# Set facial recognition model: VGG-Face, Facenet, Facenet512, OpenFace, DeepFace, DeepId, ArcFace, Dlib, SFace, GhostFaceNet
+REACT_APP_FACE_RECOGNITION_MODEL=Facenet
+
+# Set face detector: opencv, ssd, mtcnn, dlib, mediapipe, retinaface, yolov8, yunet, centerface
+REACT_APP_DETECTOR_BACKEND=opencv
+
+# Set distance metric: cosine, euclidean, euclidean_l2
+REACT_APP_DISTANCE_METRIC=cosine
+```
 
 ## Running Service
 

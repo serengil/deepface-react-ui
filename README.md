@@ -59,7 +59,7 @@ Firstly, you have to run the deepface service.
 
 ```shell
 # clone deepface repo
-git clone git clone https://github.com/serengil/deepface.git
+git clone https://github.com/serengil/deepface.git
 
 # go to project's directory
 cd deepface/scripts

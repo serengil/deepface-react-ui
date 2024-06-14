@@ -54,12 +54,17 @@ REACT_APP_DISTANCE_METRIC=cosine
 
 ## Running Service
 
-Firstly, you have to run the deepface service.
+You should clone both deepface and deepface-react-ui repos in same directory.
 
 ```shell
 # clone deepface repo
-git clone https://github.com/serengil/deepface.git
+git clone https://github.com/serengil/deepface-react-ui.git \
+    && git clone https://github.com/serengil/deepface.git
+```
 
+Secondly, you should run the deepface service as
+
+```shell
 # go to project's directory
 cd deepface/scripts
 
@@ -70,12 +75,9 @@ cd deepface/scripts
 # ./service.sh
 ```
 
-In seperate terminal, you should run deepface react ui
+In seperate terminal, you should run deepface react ui as
 
 ```shell
-# clone deepface react ui repo
-git clone https://github.com/serengil/deepface-react-ui.git
-
 # go to project's directory
 cd deepface-react-ui/scripts
 

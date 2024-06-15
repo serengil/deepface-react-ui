@@ -22,7 +22,7 @@ Facial recognition technology plays a pivotal role in modern applications, from 
 
 <p align="center"><img src="https://raw.githubusercontent.com/serengil/deepface-react-ui/main/resources/tp.jpg" width="50%"></p>
 
-## Getting The App Up
+## Cloning The Service
 
 Firstly, you should clone both deepface and deepface-react-ui repos in same directory.
 
@@ -62,7 +62,7 @@ REACT_APP_DETECTOR_BACKEND=opencv
 REACT_APP_DISTANCE_METRIC=cosine
 ```
 
-## Running Service
+## Running Service Directly
 
 Firstly, you should run the deepface service as
 

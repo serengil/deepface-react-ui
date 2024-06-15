@@ -106,7 +106,7 @@ cd deepface-react-ui/scripts
 ./compose.sh
 ```
 
-# Using The App
+## Using The App - [`Demo`](https://youtu.be/IXoah6rhxac)
 
 Once you start the service, the DeepFace service will be accessible at `http://localhost:5005/`, and the DeepFace React UI will be available at `http://localhost:3000/`.
 

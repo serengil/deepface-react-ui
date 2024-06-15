@@ -22,6 +22,16 @@ Facial recognition technology plays a pivotal role in modern applications, from 
 
 <p align="center"><img src="https://raw.githubusercontent.com/serengil/deepface-react-ui/main/resources/tp.jpg" width="50%"></p>
 
+## Getting The App Up
+
+Firstly, you should clone both deepface and deepface-react-ui repos in same directory.
+
+```shell
+# clone deepface repo
+git clone https://github.com/serengil/deepface-react-ui.git \
+    && git clone https://github.com/serengil/deepface.git
+```
+
 ## Facial Database Configuration
 
 There is `.env.example` file in the root of the project. You should copy this as `.env`. Required modifications are mentioned as comments. You basically need to add your facial database items into this file, prefixing each with `REACT_APP_USER_`, where the identity name with that prefix serves as the key and the base64-encoded string of their images serves as the value.
@@ -33,7 +43,7 @@ REACT_APP_USER_BOB=data:image/png;base64,...
 REACT_APP_USER_CAROL=data:image/png;base64,...
 ```
 
-## Model Configuration
+## Model Configuration (Optional)
 
 DeepFace wraps many state-of-the-art facial recognition models: [`VGG-Face`](https://sefiks.com/2018/08/06/deep-face-recognition-with-keras/), [`FaceNet`](https://sefiks.com/2018/09/03/face-recognition-with-facenet-in-keras/), [`OpenFace`](https://sefiks.com/2019/07/21/face-recognition-with-openface-in-keras/), [`DeepFace`](https://sefiks.com/2020/02/17/face-recognition-with-facebook-deepface-in-keras/), [`DeepID`](https://sefiks.com/2020/06/16/face-recognition-with-deepid-in-keras/), [`ArcFace`](https://sefiks.com/2020/12/14/deep-face-recognition-with-arcface-in-keras-and-python/), [`Dlib`](https://sefiks.com/2020/07/11/face-recognition-with-dlib-in-python/), `SFace` and `GhostFaceNet`. According to [`experiments`](https://github.com/serengil/deepface/tree/master/benchmarks), those models reached or passed human-level accuracy.
 
@@ -54,15 +64,7 @@ REACT_APP_DISTANCE_METRIC=cosine
 
 ## Running Service
 
-You should clone both deepface and deepface-react-ui repos in same directory.
-
-```shell
-# clone deepface repo
-git clone https://github.com/serengil/deepface-react-ui.git \
-    && git clone https://github.com/serengil/deepface.git
-```
-
-Secondly, you should run the deepface service as
+Firstly, you should run the deepface service as
 
 ```shell
 # go to project's directory

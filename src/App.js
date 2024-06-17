@@ -10,9 +10,15 @@ function App() {
 
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
+  
   const [base64Image, setBase64Image] = useState('');
+  
   const [isVerified, setIsVerified] = useState(null);
   const [identity, setIdentity] = useState(null);
+
+  const [isAnalyzed, setIsAnalyzed] = useState(null);
+  const [analysis, setAnalysis] = useState([]);
+
   const [facialDb, setFacialDb] = useState({});
 
   useEffect(() => {
@@ -55,7 +61,7 @@ function App() {
     }
   }, []);
 
-  const captureImage = () => {
+  const captureImage = (task) => {
     // flush variable states when you click verify
     setIsVerified(null);
     setIdentity(null);
@@ -72,10 +78,19 @@ function App() {
     const base64Img = canvas.toDataURL('image/png');
     setBase64Image(base64Img);
 
-    verify(base64Image)
+    // first click causes blank string
+    if (base64Image === null || base64Image === "") {
+      return
+    }
 
-    console.log(`verification result is ${isVerified} - ${identity}`)
-
+    if (task === "verify") {
+      verify(base64Image)
+      console.log(`verification result is ${isVerified} - ${identity}`)
+    }
+    else if (task === "analyze") {
+      analyze(base64Image)
+    }
+    
   };
 
   const verify = async (base64Image) => {
@@ -106,16 +121,17 @@ function App() {
           body: requestBody,
         });
 
-        if (response.status !== 200) {
-          const responseMsg = await response.json();
-          console.log(responseMsg.error);
-          setIsVerified(false);
-        }
-  
         const data = await response.json();
 
+        if (response.status !== 200) {
+          console.log(data.error);
+          setIsVerified(false);
+          return
+        }
+  
         if (data.verified === true) {
           setIsVerified(true);
+          setIsAnalyzed(false);
           setIdentity(key);
           break;
         }
@@ -129,8 +145,57 @@ function App() {
       
     }
     catch (error) {
-      console.error('Error uploading image:', error);
+      console.error('Exception while verifying image:', error);
     }
+
+  };
+
+  const analyze = async (base64Image) => {
+    const result = []
+    setIsAnalyzed(false)
+    try {  
+      const requestBody = JSON.stringify(
+        {
+          detector_backend: faceDetector,
+          align: true,
+          img_path: base64Image,
+          enforce_detection: false,
+          anti_spoofing: antiSpoofing,
+        }
+      );
+
+      const response = await fetch(`${serviceEndpoint}/analyze`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: requestBody,
+      });
+
+      const data = await response.json();
+
+      if (response.status !== 200) {
+        console.log(data.error);
+        return
+      }
+
+      for (const instance of data.results){
+        const summary = `${instance.age} years old ${instance.dominant_race} ${instance.dominant_gender} with ${instance.dominant_emotion} mood.`
+        console.log(summary)
+        result.push(summary)
+      }
+
+      if (result.length > 0) {
+        setIsAnalyzed(true);
+        setIsVerified(null);
+        setAnalysis(result);
+      }
+      
+    }
+    catch (error) {
+      console.error('Exception while analyzing image:', error);
+    }
+    return result
 
   };
 
@@ -153,10 +218,12 @@ function App() {
         {/* Conditional rendering based on verification status */}
         {isVerified === true && <p style={{ color: 'green' }}>Verified. Welcome {identity}</p>}
         {isVerified === false && <p style={{ color: 'red' }}>Not Verified</p>}
-        <video ref={videoRef} style={{ width: '100%', maxWidth: '600px' }} />
-        <br></br>
-        <button onClick={captureImage}>Verify</button>
-        <br></br>
+        {isAnalyzed === true && <p style={{ color: 'green' }}>{analysis.join()}</p>}
+        <video ref={videoRef} style={{ width: '100%', maxWidth: '500px' }} />
+        <br></br><br></br>
+        <button onClick={() => captureImage('verify')}>Verify</button>
+        <button onClick={() => captureImage('analyze')}>Analyze</button>
+        <br></br><br></br>
         <canvas ref={canvasRef} style={{ display: 'none' }} />
         {/*base64Image && <img src={base64Image} alt="Captured frame" />*/}
       </header>

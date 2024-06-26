@@ -140,7 +140,7 @@ Please cite deepface-react-ui in your publications if it helps your research. He
 @article{serengil2024lightface,
   title     = {A Benchmark of Facial Recognition Pipelines and Co-Usability Performances of Modules},
   author    = {Serengil, Sefik and Ozpinar, Alper},
-  journal   = {Bilisim Teknolojileri Dergisi},
+  journal   = {Journal of Information Technologies},
   volume    = {17},
   number    = {2},
   pages     = {95-107},

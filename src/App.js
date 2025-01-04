@@ -104,8 +104,8 @@ function App() {
             detector_backend: faceDetector,
             distance_metric: distanceMetric,
             align: true,
-            img1_path: base64Image,
-            img2_path: targetEmbedding,
+            img1: base64Image,
+            img2: targetEmbedding,
             enforce_detection: false,
             anti_spoofing: antiSpoofing,
           }
@@ -158,7 +158,7 @@ function App() {
         {
           detector_backend: faceDetector,
           align: true,
-          img_path: base64Image,
+          img: base64Image,
           enforce_detection: false,
           anti_spoofing: antiSpoofing,
         }

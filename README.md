@@ -112,6 +112,12 @@ Once you start the service, the DeepFace service will be accessible at `http://l
 
 To use the DeepFace React UI, open `http://localhost:3000/` in your browser. The UI will prompt access to your webcam and search for identities within the current frame using the facial database specified in the `.env` file when you click on the "Verify" button.
 
+## Facial Attribute Analysis - [`Demo`](https://youtu.be/_waBA-cH2D4)
+
+UI also supports demography analysis including age, gender, emotion and race & ethnicity prediction tasks.
+
+<p align="center"><img src="https://raw.githubusercontent.com/serengil/deepface-react-ui/main/resources/demography.jpg" width="50%"></p>
+
 ## Support
 
 There are many ways to support a project - starring⭐️ the GitHub repo is just one 🙏
@@ -134,7 +140,7 @@ Please cite deepface-react-ui in your publications if it helps your research. He
 @article{serengil2024lightface,
   title     = {A Benchmark of Facial Recognition Pipelines and Co-Usability Performances of Modules},
   author    = {Serengil, Sefik and Ozpinar, Alper},
-  journal   = {Bilisim Teknolojileri Dergisi},
+  journal   = {Journal of Information Technologies},
   volume    = {17},
   number    = {2},
   pages     = {95-107},
